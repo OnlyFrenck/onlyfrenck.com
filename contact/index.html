@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - OnlyFrenck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../immagini/logo.png" type="image/x-icon">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "JKHdcbryYPQwuZXXa",
+        });
+    })();
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../immagini/logo.png" alt="Logo" class="logo">
+        <h1>OnlyFrenck</h1>
+    </header>
+    <nav>
+        <a href="../farm-terra-bio/index.html" class="ftb">Accedi a FARM TERRA BIO</a>
+        <a href="../index.html">Home</a>
+        <a href="../socials/index.html">Socials</a>
+        <a href="../chi-sono/index.html">Chi sono</a>
+        <a href="./index.html" class="active">Contatti</a>
+    </nav>
+    <div class="container">
+        <p>Utilizza questo form di contatto per contattarmi:</p>
+        <h1>Contattami</h1>
+        <form id="contact-form">
+            <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+            <input type="email" id="email" name="email" placeholder="La tua email" required>
+            <textarea id="message" name="message" placeholder="Il tuo messaggio" required></textarea>
+            <button type="submit">Invia</button>
+          </form>
+        </form>
+        <script>
+            document.getElementById("contact-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const params = {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    message: document.getElementById("message").value
+                };
+
+                emailjs.send("service_51s64vk", "template_2aa2wvq", params)
+                    .then(function(response) {
+                        console.log("Email inviata con successo!", response.status, response.text);
+                        alert("Messaggio inviato!");
+                    }, function(error) {
+                        console.log("Errore durante l'invio:", error);
+                        alert("Errore durante l'invio del messaggio.");
+                    });
+            });
+        </script>
+    </div>
+    <footer>
+        <p>&copy; 2025 OnlyFrenck. Tutti i diritti sono riservati.</p>
+    </footer>
+</body>
