@@ -44,7 +44,7 @@ nav a:hover {
 .container, .img {
     size: 300px;
     image-resolution: 2160;
-    font-size: 30px;
+    font-size: 20px;
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
@@ -123,4 +123,14 @@ td, tr {
 
 .s-s {
     color: orangered;
+}
+
+.videoSection {
+    display: flex;
+    gap: 250px;
+}
+
+.video {
+    width: 300px;
+    height: 300px;
 }
