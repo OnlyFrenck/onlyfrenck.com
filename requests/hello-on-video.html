@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saluto personalizzato nei video - OnlyFrenck</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../immagini/logo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Inizializza EmailJS con il tuo User ID
+        (function() {
+        emailjs.init("JKHdcbryYPQwuZXXa"); // Sostituisci con il tuo User ID
+        })();
+
+        // Funzione per inviare l'email
+        function sendEmail(event) {
+        event.preventDefault(); // Evita il refresh della pagina
+
+        // Invia i dati del form tramite EmailJS
+        emailjs.sendForm("service_swx7nrl", "template_hc3lpoc", event.target)
+            .then(() => {
+            alert("Richiesta inviata con successo!");
+            })
+            .catch((error) => {
+            alert("Errore durante l'invio della richiesta.");
+            console.error("Errore:", error);
+            });
+        }
+    </script>
+    <style>
+            .form-container {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            }
+
+            .form-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+            }
+
+            .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+            }
+
+            .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            }
+
+            .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            }
+
+            .form-container button:hover {
+            background-color: #0056b3;
+            }
+        </style>
+</head>
+<body>
+    <header>
+        <img src="../immagini/logo.png" alt="Logo" class="logo">
+        <h1>OnlyFrenck</h1>
+    </header>
+    <nav>
+        <a href="../farm-terra-bio/index.html" class="ftb">Accedi a FARM TERRA BIO</a>
+        <a href="../index.html">Home</a>
+        <a href="../socials/index.html">Socials</a>
+        <a href="./hello-on-video.html" class="active">Fatti salutare in un video!</a>
+        <a href="../chi-sono/index.html">Chi sono</a>
+        <a href="../contact/index.html">Contatti</a>
+    </nav>
+    <div class="container">
+        <p>Ciao! Puoi usare questa pagina al fine di richiedere un saluto nel prossimo video o live che riguarderà <b>FARMING SIMULATOR 22</b></p>
+        <p>Utilizza pure il form qui sotto:</p>
+        <div class="form-container">
+            <h2>Richiesta Saluto</h2>
+            <form onsubmit="sendEmail(event)">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="user_name" required><br>
+          
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="user_email" required><br>
+          
+                <label for="messaggio">Messaggio:</label>
+                <textarea id="messaggio" name="message" required></textarea><br>
+          
+                <button type="submit">Invia</button>
+              </form>
+        </div>
+        <p><b>ATTENZIONE!!</b></p>
+        <p>A causa di un problema con il provider mail si prega di indicare nel messaggio NOME e E-MAIL del <b>MITTENTE</b></p>
+    </div>
+</body>
+</html>
