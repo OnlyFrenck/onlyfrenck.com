@@ -136,3 +136,14 @@ td, tr {
     width: 300px;
     height: 350px;
 }
+
+.liveSection {
+    display: flex;
+    gap: 250px;
+    max-height: 3000px;
+}
+
+.live {
+    width: 300px;
+    height: 380px;
+}
