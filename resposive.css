@@ -1,0 +1,46 @@
+/* Regole responsive base */
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  * {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .hide-on-mobile {
+      display: none !important;
+    }
+  
+    .stack-on-mobile {
+      display: block !important;
+      width: 100% !important;
+    }
+  
+    .responsive-text {
+      font-size: 1rem;
+    }
+  }
+  
